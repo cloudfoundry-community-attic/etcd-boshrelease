@@ -1,0 +1,11 @@
+---
+meta:
+  environment: NAME
+  security_groups:
+    - default
+director_uuid: PLACEHOLDER-DIRECTOR-UUID
+releases:
+  - name: etcd
+    version: latest
+properties:
+  etcd: {}
