@@ -1,0 +1,22 @@
+---
+name: etcd
+packages:
+- etcd
+templates:
+  bin/etcd_ctl.erb: bin/etcd_ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+properties:
+  etcd.leader_address:
+    description: "IP/Host of ETCD cluster leader"
+  etcd.port:
+    description: "Inbound traffic port"
+    default: 4001
+  etcd.peer_port:
+    description: "Peer communication port"
+    default: 7001
+  networks.apps:
+    description: "Used to get our IP address"
