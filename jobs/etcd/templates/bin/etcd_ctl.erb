@@ -23,6 +23,8 @@ case $1 in
         -addr $LISTEN_ADDRESS:$PORT \
         -peer-addr $LISTEN_ADDRESS:$PEER_PORT \
         -name=$NAME_INDEX \
+        -peer-heartbeat-timeout=$PEER_HEARTBEAT_TIMEOUT \
+        -peer-election-timeout=$PEER_ELECTION_TIMEOUT \
         <% if_p("etcd.leader_address") do |leader_address| %>\
         -peers <%= leader_address %>:$PEER_PORT \
         <% end %>\

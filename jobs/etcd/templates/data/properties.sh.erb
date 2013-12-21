@@ -15,3 +15,5 @@ export LISTEN_ADDRESS=<%= spec.networks.send(p("networks.apps")).ip %>
 
 export PORT=<%= p("etcd.port") %>
 export PEER_PORT=<%= p("etcd.peer_port") %>
+export PEER_HEARTBEAT_TIMEOUT=<%= p("etcd.peer_heartbeat_timeout") %>
+export PEER_ELECTION_TIMEOUT=<%= p("etcd.peer_election_timeout") %>

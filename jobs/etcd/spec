@@ -18,5 +18,12 @@ properties:
   etcd.peer_port:
     description: "Peer communication port"
     default: 7001
+  etcd.peer_heartbeat_timeout:
+    description: "Tune heartbeat timeout (ms) https://github.com/coreos/etcd#tuning"
+    default: 50
+  etcd.peer_election_timeout:
+    description: "Tune election timeout (ms). 4 to 5 times your heartbeat timeout."
+    default: 200
+
   networks.apps:
     description: "Used to get our IP address"
