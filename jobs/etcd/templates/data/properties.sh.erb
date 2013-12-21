@@ -9,11 +9,4 @@ export JOB_INDEX=<%= index %>
 # full job name, like redis/0 or webapp/3
 export JOB_FULL="$NAME/$JOB_INDEX"
 
-export NAME_INDEX=<%= "#{name}-#{index}" %>
-
 export LISTEN_ADDRESS=<%= spec.networks.send(p("networks.apps")).ip %>
-
-export PORT=<%= p("etcd.port") %>
-export PEER_PORT=<%= p("etcd.peer_port") %>
-export PEER_HEARTBEAT_TIMEOUT=<%= p("etcd.peer_heartbeat_timeout") %>
-export PEER_ELECTION_TIMEOUT=<%= p("etcd.peer_election_timeout") %>

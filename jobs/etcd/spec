@@ -3,8 +3,9 @@ name: etcd
 packages:
 - etcd
 templates:
-  bin/etcd_ctl.erb: bin/etcd_ctl
+  bin/etcd_ctl: bin/etcd_ctl
   bin/monit_debugger: bin/monit_debugger
+  config/etcd.conf.erb: config/etcd.conf
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
