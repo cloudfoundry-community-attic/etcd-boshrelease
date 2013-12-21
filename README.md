@@ -32,6 +32,26 @@ templates/make_manifest aws-ec2
 bosh -n deploy
 ```
 
+Now store some data on one node:
+
+```
+curl -X PUT -L http://10.244.0.10:4001/v2/keys/url -d value="db.example.com"
+{"action":"set","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}%                                                                              ```
+
+And fetch it from another node:
+
+```
+curl http://10.244.0.6:4001/v2/keys/url                                     
+{"action":"get","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}%
+```
+
+You can now start/stop nodes (bosh jobs) and the cluster recovers:
+
+```
+bosh stop etcd_leader_z1 0
+bosh start etcd_leader_z1 0
+```
+
 ### Override security groups
 
 For AWS & Openstack, the default deployment assumes there is a `default` security group with ports 22 and 2181 open. If you wish to use a different security group(s) then you can pass in additional configuration when running `make_manifest` above.
