@@ -35,21 +35,21 @@ bosh -n deploy
 Now store some data on one node:
 
 ```
-curl -X PUT -L http://10.244.0.10:4001/v2/keys/url -d value="db.example.com"
+$ curl -X PUT -L http://10.244.0.10:4001/v2/keys/url -d value="db.example.com"
 {"action":"set","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}
 ```
 
 And fetch it from another node:
 
 ```
-curl http://10.244.0.6:4001/v2/keys/url                                     
+$ curl http://10.244.0.6:4001/v2/keys/url                                     
 {"action":"get","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}
 ```
 
 See the list of machines:
 
 ```
-curl http://10.244.0.6:4001/v2/machines   
+$ curl http://10.244.0.6:4001/v2/machines   
 http://10.244.0.14:4001, http://10.244.0.6:4001, http://10.244.0.10:4001
 ```
 
