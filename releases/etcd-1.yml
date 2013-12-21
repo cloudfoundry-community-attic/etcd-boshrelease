@@ -1,0 +1,36 @@
+---
+packages:
+- name: etcd
+  version: 1
+  sha1: !binary |-
+    ZmMxMzFkYWQ4ZjAxODkyMjE2NDRhMTdmMjljYjZiNWI0MWU2N2NmNA==
+  fingerprint: !binary |-
+    NTFjMGRlNTljYjRiMjIzZjBlODQ0Zjc5YTIzODUzZmVhMDBiMjIwMA==
+  dependencies:
+  - golang
+  - git
+- name: git
+  version: 1
+  sha1: !binary |-
+    NGQ4YjBmZjU1NDYwNjk0YzZkNGU0YjI0ZjI3NDBlNTQ0N2MxYmYwZA==
+  fingerprint: !binary |-
+    MzM3M2VhYjBjNjJmOTg4MDE5YzVmNmZjODUyZTlhN2Q4MGNiNDJjMQ==
+  dependencies: []
+- name: golang
+  version: 1
+  sha1: !binary |-
+    ZmMzMTg2YmI1NzE5OGJhZjVjZTJjYzU2ZGE2Y2VkYThmMGRjYzZhMA==
+  fingerprint: !binary |-
+    OTg0Y2UwMzM3NWViMmNlY2JkOTBiNGQ0MmZhODFlODYxNjU4YWY0YQ==
+  dependencies: []
+jobs:
+- name: etcd
+  version: 1
+  fingerprint: !binary |-
+    YjI0MTBjMjg4ZjBiY2U3Mjk3NzU4NjU5MjUzMTE0MjY4ODA4MTg2Zg==
+  sha1: !binary |-
+    N2Y5YTdkY2FjZWJhOTM3ZjRmODA4YjM0MTllNDNlNzkyYjQ0MDY1YQ==
+commit_hash: 09ed4007
+uncommitted_changes: true
+name: etcd
+version: 1
