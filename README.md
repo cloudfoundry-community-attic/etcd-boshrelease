@@ -54,7 +54,9 @@ bosh start etcd_leader_z1 0
 
 ### Override security groups
 
-For AWS & Openstack, the default deployment assumes there is a `default` security group with ports 22 and 2181 open. If you wish to use a different security group(s) then you can pass in additional configuration when running `make_manifest` above.
+For AWS & Openstack, the default deployment assumes there is a `default` security group. If you wish to use a different security group(s) then you can pass in additional configuration when running `make_manifest` above.
+
+The security group should allow port 22 and 4001 (for incoming etcd traffic), and port 7001 between the servers themselves.
 
 Create a file `my-networking.yml`:
 
