@@ -12,15 +12,19 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: etcd_z1
+  - name: etcd_leader_z1
     instances: 1
     networks:
       - name: etcd1
-
-properties:
-  etcd:
-    servers:
-      - (( "0.etcd_z1.etcd1." meta.environment ".microbosh" ))
+        static_ips: ~
+  - name: etcd_z1
+    instances: 2
+    networks:
+      - name: etcd1
+        static_ips: ~
+    properties:
+      etcd:
+        leader_address: (( "0.etcd-leader-z1.etcd1." meta.environment ".microbosh" ))
 
 compilation:
   cloud_properties:
