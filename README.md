@@ -25,7 +25,7 @@ templates/make_manifest openstack-nova
 bosh -n deploy
 ```
 
-For AWS EC2, create a three-node cluster:
+For AWS EC2, create a three-node clusterg:
 
 ```
 templates/make_manifest aws-ec2
@@ -46,12 +46,27 @@ curl http://10.244.0.6:4001/v2/keys/url
 {"action":"get","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}
 ```
 
-You can now start/stop nodes (bosh jobs) and the cluster recovers:
+See the list of machines:
 
 ```
-bosh stop etcd_leader_z1 0
-bosh start etcd_leader_z1 0
+curl http://10.244.0.6:4001/v2/machines   
+http://10.244.0.14:4001, http://10.244.0.6:4001, http://10.244.0.10:4001
 ```
+
+
+You can now start/stop nodes (bosh jobs) and the cluster elects a new leader in the meantime:
+
+```
+$ curl http://10.244.0.10:4001/v2/leader
+http://10.244.0.6:7001
+
+# restart 10.244.0.6
+$ bosh -n restart etcd_leader_z1 0
+
+$ curl http://10.244.0.10:4001/v2/leader
+http://10.244.0.14:7001
+```
+
 
 ### Override security groups
 
