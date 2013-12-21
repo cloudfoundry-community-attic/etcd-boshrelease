@@ -1,1 +1,16 @@
---- {}
+---
+etcd/etcd-0.2.0-rc2.tar.gz:
+  object_id: f3a2c057-0511-46be-b617-e598987363ca
+  sha: !binary |-
+    YzEwZWI2Mzc3ZGJjMmZiYWNhOTdkZmU1Y2JmYmVlNmQ4Y2ZiZGIxZA==
+  size: 1493493
+git/git-1.7.11.2.tar.gz:
+  object_id: c1109b59-7e4f-4188-9b65-09828a7afee8
+  sha: !binary |-
+    ZjY3YjRmNmMwMjc3MjUwNDExYzY4NzJhZTdiOGE4NzJhZTExZDMxMw==
+  size: 4015780
+golang/go1.1.2.linux-amd64-yacc-shaved.tar.gz:
+  object_id: e6f23f7f-f2e5-4b96-977c-437832cd8d08
+  sha: !binary |-
+    MDJhYTlmNDdiOTVjZTAxMmI1NzAyZGFmNDFkM2ZmNGI3ODFhYzMwZQ==
+  size: 41768327
