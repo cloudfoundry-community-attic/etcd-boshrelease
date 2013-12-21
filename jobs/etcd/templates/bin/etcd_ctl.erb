@@ -21,9 +21,7 @@ case $1 in
 
     exec chpst -u vcap:vcap /var/vcap/packages/etcd/etcd -snapshot -data-dir $WORK_DIR \
         -addr $LISTEN_ADDRESS:$PORT \
-        -bind-addr 0.0.0.0 \
         -peer-addr $LISTEN_ADDRESS:$PEER_PORT \
-        -peer-bind-addr 0.0.0.0\
         -name=$NAME_INDEX \
         <% if_p("etcd.leader_address") do |leader_address| %>\
         -peers <%= leader_address %>:$PEER_PORT \
