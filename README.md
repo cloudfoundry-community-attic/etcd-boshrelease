@@ -18,14 +18,14 @@ templates/make_manifest warden
 bosh -n deploy
 ```
 
-For Openstack (Nova Networks), create a single VM:
+For Openstack (Nova Networks), create a three-node cluster:
 
 ```
 templates/make_manifest openstack-nova
 bosh -n deploy
 ```
 
-For AWS EC2, create a single VM:
+For AWS EC2, create a three-node cluster:
 
 ```
 templates/make_manifest aws-ec2
