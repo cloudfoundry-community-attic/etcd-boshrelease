@@ -36,13 +36,14 @@ Now store some data on one node:
 
 ```
 curl -X PUT -L http://10.244.0.10:4001/v2/keys/url -d value="db.example.com"
-{"action":"set","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}%                                                                              ```
+{"action":"set","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}
+```
 
 And fetch it from another node:
 
 ```
 curl http://10.244.0.6:4001/v2/keys/url                                     
-{"action":"get","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}%
+{"action":"get","node":{"key":"/url","value":"db.example.com","modifiedIndex":4,"createdIndex":4}}
 ```
 
 You can now start/stop nodes (bosh jobs) and the cluster recovers:
