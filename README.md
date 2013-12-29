@@ -8,7 +8,7 @@ To use this bosh release, first upload it to your bosh:
 bosh target BOSH_HOST
 git clone https://github.com/cloudfoundry-community/etcd-boshrelease.git
 cd etcd-boshrelease
-bosh upload release releases/etcd-2.yml
+bosh upload release releases/etcd-3.yml
 ```
 
 For [bosh-lite](https://github.com/cloudfoundry/bosh-lite), you can quickly create a deployment manifest & deploy a 3 VM cluster:
