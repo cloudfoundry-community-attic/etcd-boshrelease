@@ -9,8 +9,8 @@ golang/go1.1.2.linux-amd64-yacc-shaved.tar.gz:
   sha: !binary |-
     MDJhYTlmNDdiOTVjZTAxMmI1NzAyZGFmNDFkM2ZmNGI3ODFhYzMwZQ==
   size: 41768327
-etcd/etcd-0.2.0-rc3.tar.gz:
-  object_id: d6d01bb1-dfa9-486f-9f71-b50f03a286ca
+etcd/etcd-0.2.0.tar.gz:
+  object_id: 9972a4f1-1cb6-4610-b41f-cc5712d29570
   sha: !binary |-
-    OGIwOGIxNzRjMWRhMjViMGI2ODlmYmY2MjA1NjdiOGI5NGU4N2Q1ZA==
-  size: 1500075
+    YzE4YmZlNTMzYTVjMTgwMDEyMTg4ZTQwMzliNzQwYjk1NjQ4OTRjZQ==
+  size: 1500812
