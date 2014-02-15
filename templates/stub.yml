@@ -2,11 +2,9 @@
 meta:
   environment: NAME
   security_groups:
-    - default
+    - etcd # 22, 4001
   discovery_uri: https://discovery.etcd.io/DISCOVERY_TOKEN
 director_uuid: PLACEHOLDER-DIRECTOR-UUID
 releases:
   - name: etcd
     version: latest
-properties:
-  etcd: {}

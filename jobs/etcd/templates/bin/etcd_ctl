@@ -13,7 +13,7 @@ case $1 in
 
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap /var/vcap/packages/etcd/etcd \
+    exec chpst -u vcap:vcap etcd \
         -config $JOB_DIR/config/etcd.conf \
       1>>$LOG_DIR/etcd.stdout.log \
       2>>$LOG_DIR/etcd.stderr.log

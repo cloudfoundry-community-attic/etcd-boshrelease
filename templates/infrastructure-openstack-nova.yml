@@ -5,6 +5,11 @@ meta:
     name: bosh-openstack-kvm-ubuntu
     version: latest
 
+  discovery_uri: (( merge ))
+
+  security_groups:
+  - etcd
+
 update:
   canaries: 1
   max_in_flight: 50
@@ -35,6 +40,10 @@ resource_pools:
     cloud_properties:
       instance_type: m1.small
 
+properties:
+  networks:
+    apps: etcd1
+
 networks:
   - name: floating
     type: vip
@@ -42,5 +51,4 @@ networks:
   - name: etcd1
     type: dynamic
     cloud_properties:
-      security_groups:
-        - default
+      security_groups: (( meta.security_groups ))

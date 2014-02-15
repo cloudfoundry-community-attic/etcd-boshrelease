@@ -35,6 +35,10 @@ resource_pools:
     cloud_properties:
       name: random
 
+properties:
+  networks:
+    apps: etcd1
+
 networks:
 - name: etcd1
   subnets:
