@@ -5,9 +5,10 @@ set -e
 infrastructure=$1
 template_prefix="docker-server"
 
-if [ "$infrastructure" != "aws-ec2" ] && \
+if [ "$infrastructure" != "openstack-nova" ] && \
+    [ "$infrastructure" != "aws-ec2" ] && \
     [ "$infrastructure" != "warden" ] ; then
-  echo "usage: ./make_manifest <openstack-nova|warden>"
+  echo "usage: ./make_manifest <openstack-nova|aws-ec2|warden>"
   exit 1
 fi
 
@@ -29,6 +30,13 @@ fi
 if [[ $infrastructure = "aws-ec2" ]]; then
   if [[ $DIRECTOR_CPI != "aws" ]]; then
     echo "Not targeting an AWS BOSH. Please use 'bosh target' before running this script."
+    exit 1
+  fi
+fi
+
+if [[ $infrastructure = "openstack-nova" ]]; then
+  if [[ $DIRECTOR_CPI != "openstack" ]]; then
+    echo "Not targeting an OpenStack BOSH. Please use 'bosh target' before running this script."
     exit 1
   fi
 fi
