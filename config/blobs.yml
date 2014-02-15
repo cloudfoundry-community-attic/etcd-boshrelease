@@ -1,13 +1,1 @@
----
-git/git-1.7.11.2.tar.gz:
-  object_id: c1109b59-7e4f-4188-9b65-09828a7afee8
-  sha: f67b4f6c0277250411c6872ae7b8a872ae11d313
-  size: 4015780
-golang/go1.1.2.linux-amd64-yacc-shaved.tar.gz:
-  object_id: e6f23f7f-f2e5-4b96-977c-437832cd8d08
-  sha: 02aa9f47b95ce012b5702daf41d3ff4b781ac30e
-  size: 41768327
-etcd/etcd-0.3.0.tar.gz:
-  object_id: 0c32a97e-bb06-4178-b378-ec1d3ed63fa8
-  sha: 0f191070268f7c87ca044ad23179995b9290e3c0
-  size: 911733
+--- {}

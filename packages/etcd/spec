@@ -1,7 +1,5 @@
 ---
 name: etcd
-dependencies:
-  - golang
-  - git
+dependencies: []
 files:
-  - etcd/etcd-0.3.0.tar.gz
+  - etcd/etcd-v0.3.0-linux-amd64.tar.gz

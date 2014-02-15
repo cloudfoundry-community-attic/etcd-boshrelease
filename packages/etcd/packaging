@@ -1,11 +1,6 @@
 set -e -x
 
-export GOROOT=$(readlink -nf /var/vcap/packages/golang)
-export PATH=$GOROOT/bin:$PATH
+tar xzf etcd/etcd-v0.3.0-linux-amd64.tar.gz
 
-tar xzf etcd/etcd-0.3.0.tar.gz
-pushd etcd-0.3.0
-  ./build
-popd
-
-cp ./etcd-0.3.0/etcd ${BOSH_INSTALL_TARGET}
+mkdir -p ${BOSH_INSTALL_TARGET}/bin
+cp ./etcd-v0.3.0-linux-amd64/etcd* ${BOSH_INSTALL_TARGET}/bin
