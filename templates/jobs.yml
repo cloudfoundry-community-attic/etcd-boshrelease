@@ -22,4 +22,5 @@ jobs:
       canaries: 10
     properties:
       etcd:
-        leader_address: (( merge ))
+        leader_address: ~
+        discovery_uri: ~

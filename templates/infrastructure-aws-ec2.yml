@@ -5,6 +5,8 @@ meta:
     name: bosh-aws-xen-ubuntu
     version: latest
 
+  discovery_uri: (( merge ))
+
 update:
   canaries: 1
   max_in_flight: 50
@@ -12,19 +14,14 @@ update:
   update_watch_time: 1000-30000
 
 jobs:
-  - name: etcd_leader_z1
-    instances: 1
-    networks:
-      - name: etcd1
-        static_ips: ~
   - name: etcd_z1
-    instances: 2
+    instances: 3
     networks:
       - name: etcd1
         static_ips: ~
     properties:
       etcd:
-        leader_address: (( "0.etcd-leader-z1.etcd1." meta.environment ".microbosh" ))
+        discovery_uri: (( meta.discovery_uri ))
 
 compilation:
   cloud_properties:

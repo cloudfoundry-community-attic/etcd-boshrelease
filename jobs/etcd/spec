@@ -11,6 +11,8 @@ templates:
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
 properties:
+  etcd.discovery_uri:
+    description: Unique discovery endpoint for etcd to discover other existing peers in a cluster
   etcd.leader_address:
     description: "IP/Host of ETCD cluster leader"
   etcd.port:

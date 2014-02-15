@@ -4,6 +4,9 @@ addr = "<%= spec.networks.send(p("networks.apps")).ip %>:<%= p("etcd.port") %>"
 name = "<%= "#{name}-#{index}" %>"
 data_dir = "/var/vcap/store/etcd"
 snapshot = true
+<% if_p("etcd.discovery_uri") do |discovery_uri| %>
+discovery = "<%= discovery_uri %>"
+<% end %>
 <% if_p("etcd.leader_address") do |leader_address| %>
 peers = [ "<%= leader_address %>:<%= p("etcd.peer_port") %>" ]
 <% end %>

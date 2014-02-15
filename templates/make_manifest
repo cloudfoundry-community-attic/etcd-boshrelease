@@ -3,7 +3,7 @@
 set -e
 
 infrastructure=$1
-template_prefix="docker-server"
+template_prefix="etcd"
 
 if [ "$infrastructure" != "openstack-nova" ] && \
     [ "$infrastructure" != "aws-ec2" ] && \
@@ -45,11 +45,15 @@ templates=$(dirname $0)
 release=$templates/..
 tmpdir=$release/tmp
 
+DISCOVERY_TOKEN=$(curl -s https://discovery.etcd.io/new | sed -e "s/^.*\///")
+
 mkdir -p $tmpdir
 cp $templates/stub.yml $tmpdir/stub-with-uuid.yml
-echo $DIRECTOR_NAME $DIRECTOR_CPI $DIRECTOR_UUID
+echo "BOSH:     " $DIRECTOR_NAME $DIRECTOR_CPI $DIRECTOR_UUID
+echo "Discovery:" https://discovery.etcd.io/$DISCOVERY_TOKEN
 perl -pi -e "s/PLACEHOLDER-DIRECTOR-UUID/$DIRECTOR_UUID/g" $tmpdir/stub-with-uuid.yml
 perl -pi -e "s/NAME/$NAME/g" $tmpdir/stub-with-uuid.yml
+perl -pi -e "s/DISCOVERY_TOKEN/$DISCOVERY_TOKEN/g" $tmpdir/stub-with-uuid.yml
 
 spiff merge \
   $templates/deployment.yml \
